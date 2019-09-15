@@ -1,8 +1,8 @@
 package laboratorio15;
 
-public class EnergyStrategist {
+public class EnergyStrategist implements Strategist {
 	
-	public Strategist chooseStrategy(LaboRobot15 r){
+	public Strategy chooseStrategy(LaboRobot15 r){
 		if(r.energy > 70) {
 			return new RandomStrategy();
 		}else if (r.energy > 20) {

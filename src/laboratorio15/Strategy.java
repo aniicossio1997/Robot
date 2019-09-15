@@ -4,7 +4,11 @@ import java.util.Random;
 
 import static robocode.JuniorRobot.*;
 
-public abstract class Strategy implements Strategist {
+public abstract class Strategy  {
+	
+	public abstract void onHitByBullet(LaboRobot15 r);
+	public abstract void onHitWall(LaboRobot15 r);
+	
 	protected int lastScannedAngle = -1;
 	
 	public void run(LaboRobot15 r) {
