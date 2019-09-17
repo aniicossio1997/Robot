@@ -3,7 +3,8 @@ package laboratorio15;
 import static robocode.JuniorRobot.white;
 
 public class EnergyStrategist implements Strategist {
-	//clase anidada
+	//clase anidada 
+	//lea es mandon 
 	private class SpinStrategy extends Strategy {
 
 		private boolean inCenter = false;
