@@ -2,11 +2,20 @@ package laboratorio15;
 
 import static robocode.JuniorRobot.white;
 
-public class EnergyStrategist implements Strategist {
+public class EnergyStrategist extends AbstractStrategist {
 	//clase anidada 
 	//lea es mandon 
 
-	private class SpinStrategy extends Strategy {
+	private static class SpinStrategy extends Strategy {
+		
+		private static SpinStrategy singleton;
+		
+		public static SpinStrategy getInstance() {
+			if(singleton == null) {
+				singleton = new SpinStrategy();
+			}
+			return singleton;
+		}
 
 		private boolean inCenter = false;
 
@@ -84,20 +93,19 @@ public class EnergyStrategist implements Strategist {
 
 	}
 	//fin SpinStrategy
-	
-//	Strategy upDown= new UpDownStrategy();
+
 	Strategy moderated= new ModeratedStrategy();
 	Strategy spin= new SpinStrategy();
 
 	public Strategy chooseStrategy(LaboRobot15 r) {
 		if (r.energy > 70) {
 			return new RandomStrategy();
-//			return upDown; ya no puede
+//			return new UpDownStrategy(); ya no puede
 		} else if (r.energy > 20) {
 //			return new ModeratedStrategy();
 			return moderated;
 		} else {
-			return spin;
+			return SpinStrategy.getInstance();
 		}
 	}
 

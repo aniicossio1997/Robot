@@ -1,6 +1,6 @@
 package laboratorio15;
 
-public class EnemiesStrategist implements Strategist {
+public class EnemiesStrategist extends AbstractStrategist {
 
 	public class UpDownStrategy extends Strategy {
 		boolean start = true;
