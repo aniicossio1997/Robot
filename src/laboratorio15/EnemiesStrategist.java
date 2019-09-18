@@ -47,7 +47,7 @@ public class EnemiesStrategist implements Strategist {
 	}
 
 	UpDownStrategy upDown = new UpDownStrategy();
-	Strategy spin = new SpinStrategy();
+	Strategy moderated= new ModeratedStrategy();
 
 	@Override
 	public Strategy chooseStrategy(LaboRobot15 r) {
@@ -55,7 +55,7 @@ public class EnemiesStrategist implements Strategist {
 			return upDown;
 
 		} else {
-			return spin;
+			return moderated;
 		}
 	}
 
