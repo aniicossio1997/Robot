@@ -7,7 +7,8 @@ import robocode.*;
 
 public class LaboRobot15 extends JuniorRobot {
 //	private Strategist combatstrategy;
-	private EnergyStrategist estratega=new EnergyStrategist();;
+//	private EnergyStrategist estratega=new EnergyStrategist();;
+	private Strategist estratega=new EnemiesStrategist();;
 	
 
 	@Override

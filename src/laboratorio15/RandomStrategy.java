@@ -3,7 +3,7 @@ package laboratorio15;
 import java.util.Random;
 
 public class RandomStrategy extends Strategy {
-
+	
 	@Override
 	public void run(LaboRobot15 r) {
 

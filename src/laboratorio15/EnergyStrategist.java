@@ -5,9 +5,7 @@ import static robocode.JuniorRobot.white;
 public class EnergyStrategist implements Strategist {
 	//clase anidada 
 	//lea es mandon 
-	Strategy upDown= new UpDownStrategy();
-	Strategy moderated= new ModeratedStrategy();
-	Strategy spin= new SpinStrategy();
+
 	private class SpinStrategy extends Strategy {
 
 		private boolean inCenter = false;
@@ -86,11 +84,15 @@ public class EnergyStrategist implements Strategist {
 
 	}
 	//fin SpinStrategy
+	
+//	Strategy upDown= new UpDownStrategy();
+	Strategy moderated= new ModeratedStrategy();
+	Strategy spin= new SpinStrategy();
 
 	public Strategy chooseStrategy(LaboRobot15 r) {
 		if (r.energy > 70) {
-//			return new RandomStrategy();
-			return upDown;
+			return new RandomStrategy();
+//			return upDown; ya no puede
 		} else if (r.energy > 20) {
 //			return new ModeratedStrategy();
 			return moderated;
